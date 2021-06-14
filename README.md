@@ -59,7 +59,7 @@ import cv2 as cv
 import matplotlib.pyplot as plt
 image = cv.imread("F:/picture/panda.png")                   
 # 导入一幅图像
-hist = cv.calcHist([image],[0],None, [256], [0,256])        
+hist = cv.calcHist([image],[0],None, [256], [0,255])        
 # 得到统计直方图的信息
 plt.plot(hist)  # 显示直方图
 plt.show() 
@@ -258,7 +258,7 @@ cv.destroyAllWindows()
 import cv2 as cv
 import matplotlib.pyplot as plt
 # 读取图像
-image = cv.imread("F:/picture/img4.jpg",cv.IMREAD_ANYCOLOR)
+image = cv.imread("F:/picture/img4.jpg",cv.IMREAD_GRAYSCALE)
 # 创建CLAHE对象
 clahe = cv.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
 # 限制对比度的自适应阈值均衡化
